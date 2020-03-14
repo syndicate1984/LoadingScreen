@@ -1,0 +1,94 @@
+<html>
+    
+    <head>    
+        <meta charset="utf-8"/>
+        <link type ="text/css" rel ="stylesheet" href ="css/icomoon.css"/>        
+        <link type ="text/css" rel ="stylesheet" href ="css/index.css"/>
+        <link type ="text/css" rel ="stylesheet" href ="css/colors.css"/>
+    </head>
+
+    <body>
+        <img id="background"/>
+        <img id="background2"/>
+
+        <img id="cursor"/>
+
+        <div id="music-info">
+            <p id="now-playing">Now playing: n.a.</p>
+            <div id="play-button" class="icon-button icon-pause2" onclick="OnPlayClick()"></div>
+            <div id="skip-button" class="icon-button icon-next2" onclick="OnSkipClick()"></div>
+            <input type="range" min="1" max="100" id="volumeSlider">
+        </div>
+        
+        <img id="logo" style="opacity: 0;" />
+        
+
+        <h1 style="position: absolute;left: 6%;top: 7.5%;color: white;font-size: 1.75vw;font-family: 'Lucida Console';">L A S T K R I M E S</h1>
+ 
+        <div class="important" style="background-image: url('https://cdn.discordapp.com/attachments/521799290134200341/530392375479107601/side-pic3.jpg');background-repeat: no-repeat;background-size: 100% 100%;width: 55.5%;height: 47.5%;position: absolute;left: 6%;top: 15%;">
+            <div style="background-image: url('http://cdn.lowgif.com/small/4017b2f00618bb2f-review-to-action.gif');position: absolute;bottom: 45%; left: 49.5%;width: 10%;height: 10%;background-repeat: no-repeat;background-size: 50px 50px;filter: grayscale(100%);"></div>
+        </div>
+
+
+        <div class="info1" style="width: 13.5%;height: 19%;position: absolute;left: 6%;top: 64.5%;">
+            <img src="https://cdn.discordapp.com/attachments/521799290134200341/530378853453922314/shield-outline.png" style="position: absolute; left: 30%;top: 10%;width: 40%; height: 50%;filter:invert(100%);">
+            <h1 style="color: white;font-size: 1vw;font-family: 'Lucida Console'; text-align: center;margin-top: 55%;">A N T I C H E A T</h1>
+        </div>
+        
+        <div class="info1" style="width: 13.5%;height: 19%;position: absolute;left: 20%;top: 64.5%;">         
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/The_Last_of_Us_Fireflies_Logo.svg/1000px-The_Last_of_Us_Fireflies_Logo.svg.png" style="position: absolute; left: 30%;top: 10%;width: 40%; height: 50%;filter:invert(100%);">
+            <h1 style="color: white;font-size: 1vw;font-family: 'Lucida Console'; text-align: center;margin-top: 55%;">U N I C I T A T E</h1></div>
+        
+        <div class="info1" style="width: 13.5%;height: 19%;position: absolute;left: 34%;top: 64.5%;">         
+            <img src="http://simpleicon.com/wp-content/uploads/users.png" style="position: absolute; left: 30%;top: 0%;width: 40%; height: 72.5%;filter:invert(100%);">
+            <h1 style="color: white;font-size: 1vw;font-family: 'Lucida Console'; text-align: center;margin-top: 55%;">32 / 32 S l o t u r i</h1></div>
+        
+        <div class="info1" style="width: 13.5%;height: 19%;position: absolute;left: 48%;top: 64.5%;">         
+            <img src="http://xaonon.dyndns.org/logos/starwars/imperial.png" style="position: absolute; left: 30%;top: 10%;width: 40%; height: 55%;filter:invert(100%);">
+            <h1 style="color: white;font-size: 1vw;font-family: 'Lucida Console'; text-align: center;margin-top: 55%;">+ 200 M a s i n i</h1></div>
+
+        <a href="javascript:void(0)" onmouseover="showInfo()" onmouseout="closeInfo()"><h1 style="position: absolute;left: 66.1%;top: 77%;color: white;font-size: 1.8vw;font-family: 'Lucida Console';"> ━━━━━━ Info ━━━━━━ </h1></a>
+
+        <a href="javascript:void(0)" onmouseover="showNotify()" onmouseout="closeNotify()" style="transition: 0.5s;"><h1 style="position: absolute;left: 66.1%;top: 11.75%;color: white;font-size: 1.8vw;font-family: 'Lucida Console';"> ━━━━━ Noutati ━━━━━ </h1></a>
+
+        <div id="not" style="position: absolute;top: 19%;left: 66.125%; background-color: rgba(0,0,0,0.2);width: 29%;border-radius: 10px;transition: 0.5s;height: 60%;opacity: 0;">
+            <div style="position: absolute;top:1%;left: 1%;background-color: rgba(36,36,36,0.75);width: 98%;height: 98%;background-image: url('https://cdn.discordapp.com/attachments/521799290134200341/531640739571040306/dadada33243242.png'); background-size: 100% 100%;border-radius: 10px;"></div>
+        </div>
+
+        <div id="info" style="position: absolute;top: 19%;left: 66.125%; background-color: rgba(0,0,0,0.2);width: 29%;border-radius: 10px;transition: 0.5s;height: 60%;opacity: 0;">
+            <div style="position: absolute;top:1%;left: 1%;background-color: rgba(36,36,36,0.75);width: 98%;height: 98%;background-image: url('https://cdn.discordapp.com/attachments/521799290134200341/531875196756295691/informatii.png'); background-size: 100% 100%;border-radius: 10px;"></div>
+        </div>
+
+
+        <div id="player"></div>
+
+
+        <script type="text/javascript">
+            function showNotify() {
+              document.getElementById("not").style.opacity = 1;
+            }
+
+            function closeNotify() {
+              document.getElementById("not").style.opacity = 0;
+            }
+            function showInfo() {
+              document.getElementById("info").style.opacity = 1;
+            }
+
+            function closeInfo() {
+              document.getElementById("info").style.opacity = 0;
+            }
+        </script>
+    </div>
+    </body>
+
+    <script src="js/synn.js"></script>    
+    <script src="js/config.js"></script>
+    <script src="js/logger.js"></script>    
+    <script src="js/progressbar-main.js"></script>
+    <script src="js/progressbar-handler.js"></script>
+    <script src="js/progressbar-renderer.js"></script>
+    <script src="js/music-handler.js"></script>
+    <script src="js/music-controls.js"></script>
+    <script src="js/background-handler.js"></script>
+</html>
